@@ -1,0 +1,20 @@
+\section{模型与方法}
+
+\subsection{一阶动力学模型}
+
+% 有编号的单行公式用 equation，并用 eq: 前缀命名标签。
+设 $y(t)$ 为归一化输出，$t$ 为时间，$\tau>0$ 为时间常数。对于 $t\geq 0$ 的单位阶跃输入，模型为
+\begin{equation}
+  \tau\frac{\mathrm{d}y}{\mathrm{d}t}+y=1,\qquad y(0)=0.
+  \label{eq:model}
+\end{equation}
+
+\subsection{解析解与评价指标}
+
+% 多行推导用 align，以 & 对齐；不引用的行用 \notag 省略编号。
+将式\eqref{eq:model}写成关于 $1-y$ 的齐次方程，并引入无量纲时间 $\theta=t/\tau$，得到
+\begin{align}
+  y(t) &= 1-\exp(-t/\tau), \notag\\
+  y(\theta) &= 1-\exp(-\theta). \label{eq:response}
+\end{align}
+取 $\theta=1$ 与 $\theta=3$ 作为对照刻度。为比较不同时间常数在同一真实时刻的差异，另计算 $t=\qty{2}{\second}$ 时的输出。

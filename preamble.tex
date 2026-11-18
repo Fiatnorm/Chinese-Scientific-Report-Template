@@ -1,0 +1,56 @@
+% 全局排版：正文小四宋体，两字首行缩进；勿用空格模拟缩进。
+\usepackage[margin=25mm,footskip=12mm]{geometry}
+\setmainfont{TeX Gyre Termes}
+\linespread{1.18}
+\setlength{\parindent}{2\ccwd}
+\setlength{\parskip}{0pt}
+\pagestyle{plain}
+
+% 一级标题用四号黑体，二级用小四黑体；节号为 1、1.1。
+\ctexset{
+  section = {format=\raggedright\heiti\zihao{4},name={},number=\arabic{section},
+    aftername=\hspace{0.75em},beforeskip=1.1ex plus 0.3ex,afterskip=0.7ex,
+    afterindent=true},
+  subsection = {format=\raggedright\heiti\zihao{-4},name={},
+    number=\arabic{section}.\arabic{subsection},aftername=\hspace{0.75em},
+    beforeskip=0.9ex plus 0.2ex,afterskip=0.5ex,afterindent=true}
+}
+\setcounter{secnumdepth}{2}
+
+% 首页为论文式标题区，不另设封面，不重置页码。
+\makeatletter
+\renewcommand{\@maketitle}{%
+  \begin{center}
+    {\heiti\zihao{3}\@title\par}
+    \vspace{0.6em}
+    {\zihao{-4}\@author\par}
+    \vspace{0.2em}
+    {\zihao{5}\@date\par}
+  \end{center}%
+}
+\newcommand{\ReportPDFTitle}{\@title}
+\newcommand{\ReportPDFAuthor}{\@author}
+\makeatother
+
+% 摘要与关键词采用五号宋体，标签用黑体。
+\newenvironment{reportabstract}{%
+  \par\begingroup\zihao{5}\noindent{\heiti 摘要：}\ignorespaces
+}{\par\endgroup\smallskip}
+\newcommand{\reportkeywords}[1]{\par\smallskip\noindent{\heiti 关键词：}#1\par}
+
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\DeclareCaptionFont{reportfive}{\zihao{5}}
+\captionsetup{font=reportfive,labelsep=quad,justification=centering}
+\captionsetup[figure]{position=bottom}
+\captionsetup[table]{position=top}
+
+% 顺序编码引文。保留 2015 样式以兼容较旧 TeX Live；不是 2025 版样式。
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+\addbibresource{references.bib}
+\renewcommand*{\bibfont}{\zihao{5}}
+\usepackage[hidelinks,unicode]{hyperref}
+\AtBeginDocument{\hypersetup{pdftitle={\ReportPDFTitle},pdfauthor={\ReportPDFAuthor}}}

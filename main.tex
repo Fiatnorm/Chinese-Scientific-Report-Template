@@ -1,0 +1,27 @@
+% !TeX program = xelatex
+\documentclass[UTF8,a4paper,zihao=-4,scheme=chinese,fontset=fandol]{ctexart}
+\input{preamble.tex}
+
+% 每篇报告替换题名、作者、单位和日期；固定日期方便版本归档。
+\title{一阶系统阶跃响应的数值分析}
+\author{示例作者}
+\date{示例单位 · 2026年11月18日}
+
+\begin{document}
+\maketitle
+
+% 摘要简述目的、方法、结果与结论；关键词用全角分号隔开。
+\begin{reportabstract}
+以单位增益一阶系统为例，分析时间常数对阶跃响应速度的影响。由微分方程推导归一化响应，在三种时间常数下比较固定时刻的输出。计算表明，输出在一个时间常数处约为稳态值的 \qty{63.2}{\percent}，在三个时间常数处约为 \qty{95.0}{\percent}。算例仅为模型计算，不代表实验测量。
+
+\reportkeywords{一阶系统；阶跃响应；时间常数；数值计算}
+\end{reportabstract}
+
+% 路径相对于项目根目录；只编译本文件，不单独编译各节。
+\input{sections/introduction.tex}
+\input{sections/method.tex}
+\input{sections/results.tex}
+\input{sections/conclusion.tex}
+
+\printbibliography[title={参考文献}]
+\end{document}
