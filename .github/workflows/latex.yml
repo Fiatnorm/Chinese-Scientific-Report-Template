@@ -25,7 +25,7 @@ jobs:
           if grep -En 'Missing character:|Overfull|undefined|Empty bibliography|Please \(re\)run Biber' build/main.log; then
             exit 1
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: sample-report
           path: build/main.pdf
