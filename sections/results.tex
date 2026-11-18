@@ -11,6 +11,8 @@
   \caption{单位阶跃输入下的一阶系统归一化响应}
   \label{fig:step-response}
 \end{figure}
+% 让本小节的图先排完，再进入下一小节。
+\FloatBarrier
 
 \subsection{固定时刻比较}
 
@@ -21,7 +23,7 @@
   \centering
   \caption{不同时间常数下的固定时刻响应}
   \label{tab:time-constants}
-  \begin{tabular}{@{}l S[table-format=1.1] S[table-format=1.1] S[table-format=1.3]@{}}
+  \begin{tabular*}{0.56\linewidth}{@{\extracolsep{\fill}}l S[table-format=1.1] S[table-format=1.1] S[table-format=1.3]@{}}
     \toprule
     工况 & {$\tau/\unit{\second}$} & {$t/\tau$} & {$y(t)$} \\
     \midrule
@@ -30,5 +32,6 @@
     较慢 & 2.0 & 1.0 & 0.632 \\
     \bottomrule
     \multicolumn{4}{@{}l@{}}{\zihao{5} 注：取 $t=\qty{2}{\second}$，输出保留三位小数。}
-  \end{tabular}
+  \end{tabular*}
 \end{table}
+\FloatBarrier

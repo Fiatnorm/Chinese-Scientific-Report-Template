@@ -4,7 +4,7 @@
 
 ## 在 Overleaf 使用
 
-1. 在 GitHub 选择 **Code → Download ZIP**，将压缩包上传至 Overleaf：**New Project → Upload Project**。
+1. 在 GitHub 选择 **Code → Download ZIP**。解压后将 `main.tex`、`preamble.tex`、`references.bib`、`sections/` 和 `figures/` 一起重新压缩，确保 `main.tex` 在 ZIP 根层而不是外套文件夹内。然后在 Overleaf 选择 **New Project → Upload Project**。
 2. 将 **Main document** 设为 `main.tex`，**Compiler** 选 **XeLaTeX**，然后点击 **Recompile**。文献由构建流程调用 Biber，不需要另行上传字体。
 3. 保留一份不写正文的模板项目。每次写新报告，在 Overleaf 中 **Copy Project**；若需要独立 GitHub 仓库，可直接选 **Use this template**。复制品不会跟随模板自动更新。
 
